@@ -55,4 +55,5 @@ def predict_maintenance(request: MaintenanceRequest):
     label_map = {0: "Normal", 1: "Failure"}
 
 
-    return {"prediction_code": int(prediction[0]),"prediction_label": label_map[int(prediction)]}
+    return {"prediction_code": int(prediction[0]),"prediction_label": label_map[int(prediction[0])]}
+
