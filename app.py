@@ -47,7 +47,8 @@ if st.button("Predict"):
     }
 
     #connect to api endpoint
-    response = requests.post("http://127.0.0.1:8000/predict",json=payload)
+    url='promaint-application-production.up.railway.app'
+    response = requests.post(url,json=payload)
     if response.status_code == 200:
         result = response.json()
         if result["prediction_label"] == "Failure":
@@ -56,3 +57,4 @@ if st.button("Predict"):
             st.success("✅ Prediction: NORMAL operation")
     else:
         st.error("Error calling the API.")
+
