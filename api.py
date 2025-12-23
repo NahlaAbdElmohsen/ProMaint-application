@@ -54,4 +54,5 @@ def predict_maintenance(request: MaintenanceRequest):
     prediction = model.predict(input_data)
     label_map = {0: "Normal", 1: "Failure"}
 
-    return {"prediction_code": int(prediction),"prediction_label": label_map[int(prediction)]}
+
+    return {"prediction_code": int(prediction[0]),"prediction_label": label_map[int(prediction)]}
